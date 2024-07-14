@@ -5,10 +5,13 @@ def main():
     file_content = get_book_text(text)
     count_words = get_total_words(file_content)
     each_characters = get_total_each_characters(file_content)
+
     print(f"--- Begin report of {text} ---")
     print(f"{count_words} words found in the document\n")
+
     for k,v in convert_dictionary_to_list(dic):
         print(f"The '{k}' character was found '{v}' times")
+    print("--- End report ---")
 
 def get_book_text(text):
     # read the content in the specified file
