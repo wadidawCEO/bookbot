@@ -1,8 +1,14 @@
-dic = {}
-
 def main():
-    text = "books/frankenstein.txt"
-    file_content = get_book_text(text)
+    user_input = input("Please type the text you want the program to read and the directory: ")
+    print("You entered:", user_input)
+    text = user_input
+
+    try:
+        file_content = get_book_text(text)
+    except FileNotFoundError:
+        print(f"The file {text} was not found")
+        return
+        
     count_words = get_total_words(file_content)
     each_characters = get_total_each_characters(file_content)
 
