@@ -15,7 +15,7 @@ def main():
     print(f"--- Begin report of {text} ---")
     print(f"{count_words} words found in the document\n")
 
-    for k,v in convert_dictionary_to_list(dic):
+    for k,v in convert_dictionary_to_list(each_characters):
         print(f"The '{k}' character was found '{v}' times")
     print("--- End report ---")
 
@@ -29,7 +29,7 @@ def get_total_words(file_content):
     return len(file_content.split())
 
 def get_total_each_characters(file_content):
-    # change file_content to lowercase, then input it in dic with loop
+    dic = {}# change file_content to lowercase, then input it in dic with loop
     # it adds only the alphabet string in list_words to dic
     list_words = file_content.lower()
     for i in list_words:
